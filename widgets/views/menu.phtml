@@ -1,0 +1,32 @@
+<!-- <nav id="nav-menu">
+
+	<ul class="list-group ">
+		<li class="list-group-item"></li>
+
+		<?php if(isset($m["item"]) && $m["item"] == $m["id"]): ?>
+            <?php $_item_style = 'active'; ?>
+        <?php else:?>
+            <?php $_item_style = ''; ?>
+	      <a href="" class="list-group-item <?php echo $_item_style?>">
+
+	      </a>
+	      <?php endif;?>
+
+	</ul>
+
+</nav> -->
+
+
+<?php if (isset($menu) && count($menu)):?>
+	<ul class="nav nav-pills nav-stacked" style="max-width: 100%;">
+	<?php foreach($menu as $m):?>
+
+		<li class="active">
+			<a href="<?php echo $m['enlace']?>">
+				<span class="glyphicon glyphicon-<?php if(isset($m['icono'])); echo $m['icono'];?>"></span> <?php echo $m["titulo"]?></a>
+			</a>
+		</li>
+
+	<?php endforeach;?>
+	</ul>
+<?php endif;?>
